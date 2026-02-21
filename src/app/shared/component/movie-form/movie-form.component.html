@@ -1,0 +1,57 @@
+
+<mat-card>
+  <form  [formGroup]="CreateForm"  (ngSubmit)="onAddCourse()">
+    <h2>{{isinEditMode ? 'Update Nem Course' :'Add-New Course'}}</h2>
+     
+
+   <div class="form-group">
+      <label for="courseName">Course-Name</label>
+      <input formControlName="courseName"     type="text" class="form-control">
+   </div>
+
+    <div class="form-group">
+       <label for="trainer">Trainer</label>
+      <input formControlName="trainer"     type="text"  class="form-control">
+    </div>
+   
+     <div class="form-group">
+         <label for="duration">Duration</label>
+      <input formControlName="duration"  type="text"  class="form-control">
+     </div>
+   
+    
+    <div class="form-group">
+        <label for="fees">Fees</label>
+      <input formControlName="fees" type="number"  class="form-control">
+    </div>
+   
+    <div class="form-group">
+      <label  for="mode">Mode</label>
+      <select formControlName="mode">
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+    </div>
+ 
+
+   <div class="form-group">
+      <label for="image url">Image URL</label>
+      <input formControlName="image"    class="form-control">
+   </div>
+  
+    <div >
+      <button 
+      *ngIf="!isinEditMode"
+      mat-raised-button color="primary" type="submit">
+          Add New Course
+      </button>
+
+      <button (click)="onUpdate()"
+      *ngIf="isinEditMode"
+      mat-raised-button color="warn" type="button">
+        Update New Course
+      </button>
+    </div>
+</form>
+</mat-card>

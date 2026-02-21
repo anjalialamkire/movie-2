@@ -1,0 +1,28 @@
+
+
+
+<div class="course">
+  <mat-card class="course-card">
+
+    <img mat-card-image [src]="courseObj.image" alt="course image">
+
+    <mat-card-content >
+      <h2>{{ courseObj.courseName }}</h2>
+
+      <p><strong>Trainer:</strong> {{ courseObj.trainer }}</p>
+      <p><strong>Duration:</strong> {{ courseObj.duration }}</p>
+      <p><strong>Fees:</strong> ₹{{ courseObj.fees }}</p>
+      <p class="trainer"><strong>Mode:</strong> {{ courseObj.mode }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button 
+      (click)="onEdit()"
+      mat-raised-button color="primary">Edit</button>
+      <button
+      (click)="onRemove()"
+      mat-raised-button color="accent">Remove</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>
